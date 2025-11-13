@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПРАКТИКА 9-10 - Контакты</title>
+    <link rel="stylesheet" href="../styles/contacts.css">
+</head>
+<body>
+    <div class="page-container">
+        <header class="header">
+            <h1>ПРАКТИКА 9-10</h1>
+        </header>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section class="contacts-section">
+                <div class="section-header">
+                    <h2 class="section-title">Наши контакты</h2>
+                    <p class="section-subtitle">Свяжитесь с нами любым удобным способом. Мы всегда рады помочь!</p>
+                </div>
+
+                <div class="contacts-grid">
+                    <!-- Контактная информация -->
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3>Электронная почта</h3>
+                                <p>astafev@mirea.ru</p>
+                                <span class="contact-note">Отвечаем в течение 24 часов</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h3>Телефон</h3>
+                                <p>+7 (495) 123-45-67</p>
+                                <span class="contact-note">Пн-Пт: 9:00-18:00</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h3>Адрес офиса</h3>
+                                <p>г. Москва, ул. Пушкина, д. Колотушкина</p>
+                                <span class="contact-note">Вход со стороны двора</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">💬</div>
+                            <div class="contact-details">
+                                <h3>Социальные сети</h3>
+                                <div class="social-links">
+                                    <a href="#" class="social-link vk">VK</a>
+                                    <a href="#" class="social-link telegram">Telegram</a>
+                                    <a href="#" class="social-link whatsapp">WhatsApp</a>
+                                </div>
+                                <span class="contact-note">Пишите в любое время</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карта -->
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <div class="map-content">
+                                <h3>Наш офис на карте</h3>
+                                <p>г. Москва, ул. Пушкина, д. Колотушкина</p>
+                                <div class="map-image">
+                                    <img src="https://via.placeholder.com/400x200/667eea/ffffff?text=Карта+офиса" alt="Карта офиса">
+                                </div>
+                                <button class="map-button">Открыть в Google Maps</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Дополнительная информация -->
+                <div class="additional-info">
+                    <div class="info-card">
+                        <h3>🕒 Время работы</h3>
+                        <ul class="work-schedule">
+                            <li><strong>Понедельник - Пятница:</strong> 9:00 - 18:00</li>
+                            <li><strong>Суббота:</strong> 10:00 - 16:00</li>
+                            <li><strong>Воскресенье:</strong> Выходной</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🚀 Быстрая поддержка</h3>
+                        <p>Наша техническая поддержка отвечает на вопросы в течение 2 часов в рабочее время</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🌍 Международные контакты</h3>
+                        <p>Для международных клиентов: <strong>+1 (555) 123-4567</strong></p>
+                        <p>Email: <strong>international@x2app.com</strong></p>
+                    </div>
+                </div>
+
+                <!-- Кнопка обратной связи -->
+                <div class="contact-actions">
+                    <button class="contact-button primary" onclick="contactModal.showModal()">
+                        📝 Написать сообщение
+                    </button>
+                    <button class="contact-button secondary" onclick="callUs()">
+                        📞 Позвонить нам
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© 2024 X2App. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <!-- Модальное окно обратной связи -->
+    <dialog id="contactModal">
+        <div class="modal-header">
+            <h2>Форма обратной связи</h2>
+            <button class="close-button" onclick="contactModal.close()">×</button>
+        </div>
+
+        <div class="modal-content">
+            <form id="feedbackForm" method="dialog">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Имя <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Электронная почта <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Категория обращения <span class="required">*</span></label>
+                    <select id="category" name="category" required>
+                        <option value="">Выберите категорию</option>
+                        <option value="technical">Техническая поддержка</option>
+                        <option value="commercial">Коммерческое предложение</option>
+                        <option value="cooperation">Сотрудничество</option>
+                        <option value="complaint">Жалоба</option>
+                        <option value="suggestion">Предложение</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Приоритет обращения</label>
+                    <div class="priority-buttons">
+                        <label class="priority-option">
+                            <input type="radio" name="priority" value="low" checked>
+                            <span class="priority-badge low">Низкий</span>
+                        </label>
+                        <label class="priority-option">
+                            <input type="radio" name="priority" value="medium">
+                            <span class="priority-badge medium">Средний</span>
+                        </label>
+                        <label class="priority-option">
+                            <input type="radio" name="priority" value="high">
+                            <span class="priority-badge high">Высокий</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Текст обращения <span class="required">*</span></label>
+                    <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                    <div class="char-counter">
+                        <span id="charCount">0</span>/1000 символов
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="newsletter" checked>
+                        <span class="checkmark"></span>
+                        Подписаться на рассылку новостей и акций
+                    </label>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-secondary" onclick="cancel()" >Отмена</button>
+                    <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить сообщение</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <script>
+        function cancel() {
+            window.close()
+        }
+        // Функция для отправки формы
+        function submitForm() {
+            const form = document.getElementById('feedbackForm');
+            const formData = new FormData(form);
+
+            // Простая валидация
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Собираем данные формы
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                category: formData.get('category'),
+                priority: formData.get('priority'),
+                message: formData.get('message'),
+                newsletter: formData.get('newsletter') ? 'Да' : 'Нет'
+            };
+
+            // В реальном приложении здесь был бы AJAX-запрос
+            console.log('Данные формы:', data);
+
+            // Показываем уведомление об успешной отправке
+            alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
+
+            // Закрываем модальное окно
+            contactModal.close();
+
+            // Очищаем форму
+            form.reset();
+            updateCharCount(); // Сбрасываем счетчик символов
+        }
+
+        // Функция для звонка
+        function callUs() {
+            if (confirm('Позвонить по номеру +7 (495) 123-45-67?')) {
+                // В реальном приложении здесь был бы код для инициации звонка
+                alert('Имитация звонка...');
+            }
+        }
+
+        // Счетчик символов для текстового поля
+        function updateCharCount() {
+            const textarea = document.getElementById('message');
+            const counter = document.getElementById('charCount');
+            counter.textContent = textarea.value.length;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const textarea = document.getElementById('message');
+            textarea.addEventListener('input', updateCharCount);
+            
+            // Инициализация счетчика
+            updateCharCount();
+
+            // Закрытие модального окна по клику на фон
+            document.getElementById('contactModal').addEventListener('click', function(event) {
+                if (event.target === this) {
+                    this.close();
+                }
+            });
+
+            // Обработка отправки формы через Enter
+            document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' && event.target.type !== 'textarea') {
+                    event.preventDefault();
+                }
+            });
+
+            // Анимация появления элементов
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.contact-item, .info-card, .map-container');
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('animate');
+                    }
+                });
+            };
+
+            // Запуск анимации при загрузке и скролле
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+        });
+    </script>
+</body>
+</html>

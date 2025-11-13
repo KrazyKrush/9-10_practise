@@ -1,0 +1,680 @@
+/* ==== БАЗОВЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ ПРАКТИК ==== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #2c3e50;
+}
+
+/* ==== КОНТЕЙНЕР СТРАНИЦЫ ==== */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+
+/* ==== ШАПКА ==== */
+.header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    grid-area: header;
+}
+
+/* ==== НАВИГАЦИЯ ==== */
+.nav {
+    background: #2c3e50;
+    padding: 20px 0;
+    grid-area: nav;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-link:hover, .nav-link.active {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+/* ==== ОСНОВНОЙ КОНТЕНТ ==== */
+main.content {
+    padding: 40px;
+    grid-area: main;
+}
+
+/* ==== СЕКЦИЯ ПРАКТИК ==== */
+.practices-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 300;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin-top: 20px;
+}
+
+/* ==== ФИЛЬТР ПРАКТИК ==== */
+.practices-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    color: #2c3e50;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.filter-btn:hover {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+}
+
+/* ==== СЕТКА ПРАКТИК ==== */
+.practices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* ==== КАРТОЧКА ПРАКТИКИ ==== */
+.practice-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.practice-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.practice-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.practice-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.practice-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.practice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.practice-title {
+    font-size: 20px;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.practice-level {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.practice-level.beginner {
+    background: #d4edda;
+    color: #155724;
+}
+
+.practice-level.intermediate {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.practice-level.advanced {
+    background: #cce7ff;
+    color: #004085;
+}
+
+.practice-level.expert {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.practice-desc {
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+    flex-grow: 1;
+}
+
+/* ==== ФИЧИ ПРАКТИКИ ==== */
+.practice-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.feature-tag {
+    background: #f8f9fa;
+    color: #667eea;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid #e9ecef;
+}
+
+/* ==== СТАТИСТИКА ПРАКТИКИ ==== */
+.practice-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    text-align: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #95a5a6;
+}
+
+/* ==== КНОПКА ПРАКТИКИ ==== */
+.practice-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+.practice-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* ==== ОБЩАЯ СТАТИСТИКА ==== */
+.practices-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.stats-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.stats-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.stats-icon {
+    font-size: 40px;
+    flex-shrink: 0;
+}
+
+.stats-content h3 {
+    margin: 0 0 8px 0;
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+.stats-content p {
+    margin: 0;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/* ==== ФУТЕР ==== */
+.footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    grid-area: footer;
+}
+
+/* ==== МОДАЛЬНОЕ ОКНО ПРАКТИКИ ==== */
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.3s ease;
+}
+
+dialog {
+    border: none;
+    border-radius: 15px;
+    padding: 0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+    max-width: 700px;
+    width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 15px 15px 0 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.close-button:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.modal-content {
+    padding: 2rem;
+}
+
+/* ==== ДЕТАЛИ ПРАКТИКИ ==== */
+.practice-detail {
+    margin-bottom: 2rem;
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.detail-level {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.level-badge {
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.level-badge.intermediate {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.detail-category {
+    background: #f8f9fa;
+    color: #667eea;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.detail-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.detail-content h3 {
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+}
+
+.detail-content p {
+    color: #34495e;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.detail-features h4,
+.detail-implementation h4,
+.detail-resources h4 {
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+}
+
+.detail-features ul {
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.detail-features li {
+    margin-bottom: 0.5rem;
+}
+
+.implementation-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.step-number {
+    background: #667eea;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.step-text {
+    color: #34495e;
+}
+
+.resources-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resource-link {
+    color: #667eea;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.resource-link:hover {
+    background: #f8f9fa;
+    border-color: #667eea;
+}
+
+/* ==== КНОПКИ МОДАЛЬНОГО ОКНА ==== */
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: #2c3e50;
+    border: 2px solid #e9ecef;
+}
+
+.btn-secondary:hover {
+    background: #e9ecef;
+}
+
+/* ==== АНИМАЦИИ ==== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ==== АДАПТИВНОСТЬ ==== */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 20px;
+    }
+
+    .nav-link {
+        display: block;
+        text-align: center;
+    }
+
+    main.content {
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .practices-filter {
+        gap: 10px;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .practices-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .practice-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .practices-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+}

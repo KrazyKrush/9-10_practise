@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПРАКТИКА 9-10 - Товары</title>
+    <link rel="stylesheet" href="../styles/goods.css">
+</head>
+<body>
+    <div class="page-container">
+        <header class="header">
+            <h1>ПРАКТИКА 9-10</h1>
+        </header>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link active" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section class="goods-section">
+                <div class="section-header">
+                    <h2 class="section-title">Наши товары</h2>
+                    <p class="section-subtitle">Мы предлагаем широкий ассортимент качественных товаров по доступным ценам</p>
+                </div>
+
+                <div class="category-filter">
+                    <button class="filter-btn active" data-category="all">Все товары</button>
+                    <button class="filter-btn" data-category="courses">Курсы</button>
+                    <button class="filter-btn" data-category="templates">Шаблоны</button>
+                    <button class="filter-btn" data-category="tools">Инструменты</button>
+                </div>
+
+                <div class="products-grid">
+                    <!-- Курс по React -->
+                    <article class="product-card" data-category="courses">
+                        <div class="product-badge">Хит продаж</div>
+                        <div class="product-image">
+                            <img src="../images/nokia.jpg" alt="Курс по React">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-name">Курс по React</h3>
+                            <p class="product-desc">Полный курс по изучению библиотеки React, включая хуки, контекст и продвинутые паттерны разработки.</p>
+                            <div class="product-features">
+                                <span class="feature">📚 45 уроков</span>
+                                <span class="feature">⏱️ 28 часов</span>
+                                <span class="feature">🔄 Пожизненный доступ</span>
+                            </div>
+                            <div class="product-rating">
+                                ⭐⭐⭐⭐⭐ <span class="rating-value">4.9 (127 отзывов)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">4 990 ₽</span>
+                                <span class="old-price">7 990 ₽</span>
+                            </div>
+                            <button class="buy-button">Добавить в корзину</button>
+                        </div>
+                    </article>
+
+                    <!-- Курс по Node.js -->
+                    <article class="product-card" data-category="courses">
+                        <div class="product-badge">Новинка</div>
+                        <div class="product-image">
+                            <img src="../images/nokia.jpg" alt="Курс по Node.js">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-name">Курс по Node.js</h3>
+                            <p class="product-desc">Освойте серверную разработку на Node.js. Express, MongoDB, аутентификация и деплой приложений.</p>
+                            <div class="product-features">
+                                <span class="feature">📚 38 уроков</span>
+                                <span class="feature">⏱️ 32 часа</span>
+                                <span class="feature">🔄 Пожизненный доступ</span>
+                            </div>
+                            <div class="product-rating">
+                                ⭐⭐⭐⭐ <span class="rating-value">4.7 (89 отзывов)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">5 490 ₽</span>
+                            </div>
+                            <button class="buy-button">Добавить в корзину</button>
+                        </div>
+                    </article>
+
+                    <!-- Шаблон интернет-магазина -->
+                    <article class="product-card" data-category="templates">
+                        <div class="product-image">
+                            <img src="../images/nokia.jpg" alt="Шаблон интернет-магазина">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-name">Шаблон интернет-магазина</h3>
+                            <p class="product-desc">Готовый адаптивный шаблон интернет-магазина на React с корзиной, фильтрами и формой заказа.</p>
+                            <div class="product-features">
+                                <span class="feature">📱 Адаптивный дизайн</span>
+                                <span class="feature">🛒 Корзина покупок</span>
+                                <span class="feature">🎨 Легкая кастомизация</span>
+                            </div>
+                            <div class="product-rating">
+                                ⭐⭐⭐⭐⭐ <span class="rating-value">4.8 (56 отзывов)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">2 990 ₽</span>
+                            </div>
+                            <button class="buy-button">Добавить в корзину</button>
+                        </div>
+                    </article>
+
+                    <!-- Инструмент анализа кода -->
+                    <article class="product-card" data-category="tools">
+                        <div class="product-badge">Скидка 30%</div>
+                        <div class="product-image">
+                            <img src="../images/nokia.jpg" alt="Инструмент анализа кода">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-name">CodeAnalyzer Pro</h3>
+                            <p class="product-desc">Мощный инструмент для статического анализа JavaScript кода. Находит ошибки и предлагает улучшения.</p>
+                            <div class="product-features">
+                                <span class="feature">🔍 Анализ качества</span>
+                                <span class="feature">📊 Метрики кода</span>
+                                <span class="feature">⚡ Быстрая проверка</span>
+                            </div>
+                            <div class="product-rating">
+                                ⭐⭐⭐⭐ <span class="rating-value">4.6 (34 отзыва)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">3 490 ₽</span>
+                                <span class="old-price">4 990 ₽</span>
+                            </div>
+                            <button class="buy-button">Добавить в корзину</button>
+                        </div>
+                    </article>
+
+                    <!-- Курс по Vue.js -->
+                    <article class="product-card" data-category="courses">
+                        <div class="product-image">
+                            <img src="../images/nokia.jpg" alt="Курс по Vue.js">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-name">Курс по Vue.js</h3>
+                            <p class="product-desc">Изучите прогрессивный фреймворк Vue.js. Компоненты, Vuex, Vue Router и современные практики.</p>
+                            <div class="product-features">
+                                <span class="feature">📚 42 урока</span>
+                                <span class="feature">⏱️ 30 часов</span>
+                                <span class="feature">🔄 Пожизненный доступ</span>
+                            </div>
+                            <div class="product-rating">
+                                ⭐⭐⭐⭐⭐ <span class="rating-value">4.9 (73 отзыва)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">4 790 ₽</span>
+                            </div>
+                            <button class="buy-button">Добавить в корзину</button>
+                        </div>
+                    </article>
+
+                    <!-- UI Kit компонентов -->
+                    <article class="product-card" data-category="templates">
+                        <div class="product-badge">Популярное</div>
+                        <div class="product-image">
+                            <img src="../images/nokia.jpg" alt="UI Kit компонентов">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-name">Modern UI Kit</h3>
+                            <p class="product-desc">Библиотека современных React компонентов: кнопки, формы, модальные окна, таблицы и многое другое.</p>
+                            <div class="product-features">
+                                <span class="feature">🎯 50+ компонентов</span>
+                                <span class="feature">📱 Адаптивный дизайн</span>
+                                <span class="feature">🎨 Темная/светлая тема</span>
+                            </div>
+                            <div class="product-rating">
+                                ⭐⭐⭐⭐⭐ <span class="rating-value">4.8 (41 отзыв)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">1 990 ₽</span>
+                            </div>
+                            <button class="buy-button">Добавить в корзину</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© 2024 X2App. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Фильтрация товаров по категориям
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Убираем активный класс у всех кнопок
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Добавляем активный класс текущей кнопке
+                    this.classList.add('active');
+
+                    const category = this.dataset.category;
+
+                    productCards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Обработка кнопок покупки
+            const buyButtons = document.querySelectorAll('.buy-button');
+            buyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productName = this.closest('.product-card').querySelector('.product-name').textContent;
+                    alert(`Товар "${productName}" добавлен в корзину!`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
