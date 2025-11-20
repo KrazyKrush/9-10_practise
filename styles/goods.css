@@ -81,6 +81,15 @@ main.content {
 }
 
 /* ==== СЕКЦИЯ ТОВАРОВ ==== */
+.goods-placeholder {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    margin-bottom: 25px;
+}
+
 .goods-section {
     max-width: 1200px;
     margin: 0 auto;

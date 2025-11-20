@@ -28,7 +28,6 @@ body {
         "footer";
 }
 
-/* ==== ШАПКА ==== */
 .header {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: white;
@@ -81,6 +80,15 @@ main.content {
 }
 
 /* ==== СЕКЦИЯ ПРАКТИК ==== */
+.practices-placeholder {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    margin-bottom: 25px;
+}
+
 .practices-section {
     max-width: 1200px;
     margin: 0 auto;

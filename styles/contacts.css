@@ -7,7 +7,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #8e6ba6 100%, #a10e0e 0%);
     min-height: 100vh;
     color: #2c3e50;
 }
@@ -28,7 +28,7 @@ body {
         "footer";
 }
 
-/* ==== ШАПКА ==== */
+
 .header {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: white;
@@ -73,6 +73,7 @@ body {
     background: rgba(255,255,255,0.1);
     transform: translateY(-2px);
 }
+
 
 /* ==== ОСНОВНОЙ КОНТЕНТ ==== */
 main.content {
@@ -126,6 +127,14 @@ main.content {
 }
 
 /* ==== КОНТАКТНАЯ ИНФОРМАЦИЯ ==== */
+.contact-placeholder {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    margin-bottom: 25px;
+}
 .contact-info {
     display: flex;
     flex-direction: column;
